@@ -14,6 +14,10 @@ const Ac1 = () => {
           <div className="info">
             <img src={localStorage.getItem("profPic")} alt="profile pic" />
             <h1>{localStorage.getItem("UserName")}</h1>
+            <div className="details">
+              <p>الحالة : <a>عميل</a></p>
+              <p className="emailT">إيميل : <a>{localStorage.getItem("Email")}</a></p>
+            </div>
           </div>
           <div className="logOut">
             <NavLink to="/start">
