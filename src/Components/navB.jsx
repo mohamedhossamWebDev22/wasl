@@ -11,12 +11,16 @@ const NavB = (props) => {
           <img src={localStorage.getItem("profPic")} alt="" />
         </NavLink>
 
-        {/* <Icon icon="fa-solid fa-user"/> */}
         <Icon icon="fa-solid fa-screwdriver-wrench" />
-        <div className="m">
-          <Icon icon="fa-solid fa-house" />
-        </div>
+        
+          <div className="m">
+        <NavLink to={`/home${props.num}`}>
+            <Icon icon="fa-solid fa-house" />
+        </NavLink>
+          </div>
+        
         <Icon icon="fa-solid fa-magnifying-glass" />
+        
         <Icon icon="fa-solid fa-bars" />
       </nav>
     </div>
