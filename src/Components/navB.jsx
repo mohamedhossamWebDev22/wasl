@@ -1,27 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import Icon from "./Icon";
 import { NavLink } from "react-router-dom";
 
 const NavB = (props) => {
+  const [showMenu, setshowMenu] = useState("hideMenu");
+
+  const closeMenu = () => {
+    setshowMenu("hideMenu");
+  };
+  const showM = () => {
+    setshowMenu("showMenu");
+  };
+
   return (
     <div>
+      <div className={`menu ${showMenu}`}>
+        <button onClick={closeMenu}>
+          <Icon icon="fa-solid fa-xmark" />
+        </button>
+        <div className="links">
+          <NavLink to={`/home${props.num}`}>الرئيسية</NavLink>
+          <NavLink to={`/ac${props.num}`}>حسابي</NavLink>
+          <NavLink to={`/msg${props.num}`}>الرسائل</NavLink>
+          <NavLink to={`/msg${props.num}`}>الأقسام</NavLink>
+        </div>
+      </div>
       <nav>
-        
-        <NavLink to={`/ac${props.num}`}>
-          <img src={localStorage.getItem("profPic")} alt="" />
+        <NavLink to={`/msg${props.num}`}>
+          <Icon icon="fa-solid fa-message" />
         </NavLink>
 
         <Icon icon="fa-solid fa-screwdriver-wrench" />
-        
-          <div className="m">
-        <NavLink to={`/home${props.num}`}>
+
+        <div className="m">
+          <NavLink to={`/home${props.num}`}>
             <Icon icon="fa-solid fa-house" />
-        </NavLink>
-          </div>
-        
+          </NavLink>
+        </div>
+
         <Icon icon="fa-solid fa-magnifying-glass" />
-        
-        <Icon icon="fa-solid fa-bars" />
+        <button onClick={showM}>
+          <Icon icon="fa-solid fa-bars" />
+        </button>
       </nav>
     </div>
   );
