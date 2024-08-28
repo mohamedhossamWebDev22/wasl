@@ -38,6 +38,7 @@ function App() {
         <Route path="/msg2" element={<Msg2 />} />
         <Route path="/start" element={<Start />} />
         <Route path="/ac1" element={<Ac1 />} />
+        <Route path="/ac2" element={<Ac2 />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
       </Routes>
