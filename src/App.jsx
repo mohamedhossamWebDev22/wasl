@@ -11,6 +11,7 @@ import Start from './pages/Start';
 import Ac1 from './pages/Ac1';
 import Ac2 from './pages/Ac2';
 import Error from './pages/Error';
+import Contact from './pages/Contact';
 
 var Go = null
 
@@ -37,7 +38,7 @@ function App() {
         <Route path="/msg2" element={<Msg2 />} />
         <Route path="/start" element={<Start />} />
         <Route path="/ac1" element={<Ac1 />} />
-        <Route path="/ac2" element={<Ac2 />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </Router>

@@ -22,7 +22,8 @@ const NavB = (props) => {
           <NavLink to={`/home${props.num}`}>الرئيسية</NavLink>
           <NavLink to={`/ac${props.num}`}>حسابي</NavLink>
           <NavLink to={`/msg${props.num}`}>الرسائل</NavLink>
-          <NavLink to={`/msg${props.num}`}>الأقسام</NavLink>
+          <NavLink to={`/home${props.num}`}>الأقسام</NavLink>
+          <NavLink to={`/contact`}>تواصل معنا</NavLink>
         </div>
       </div>
       <nav>
