@@ -75,6 +75,9 @@ body {
       flex-direction: column;
       a{
         color: $c3;
+        &:hover {
+          text-shadow: 0px 0px 8px $c3;
+        }
       }
     }
   }
