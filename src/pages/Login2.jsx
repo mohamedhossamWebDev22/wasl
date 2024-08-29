@@ -5,12 +5,28 @@ import av1 from "../assets/image 1.png";
 import Animator from "../Components/Animator";
 import GoogleLoginBtn from "../Components/GoogleLoginBtn";
 
+import "../firebaseConfig"; // Add this line prevent firebase not loading error
+import { getFirestore, addDoc, collection } from "firebase/firestore";
+
 
 const Login2 = () => {
   const [Uname, setUname] = useState("");
 
+  const db = getFirestore();
+  
+  const saveDataToFirestore = async () => {
+    const docRef = await addDoc(collection(db, "users"), {
+      userName: localStorage.getItem("UserName"),
+      email: localStorage.getItem("Email"),
+      pic: localStorage.getItem("profPic"),
+      status: "عميل",
+    });
+    alert("Document written to Database");
+  };
+
   const saveD = () => {
     localStorage.setItem("h", 2);
+    saveDataToFirestore();
   };
 
   return (
