@@ -19,7 +19,7 @@ const Login2 = () => {
       userName: localStorage.getItem("UserName"),
       email: localStorage.getItem("Email"),
       pic: localStorage.getItem("profPic"),
-      status: "عميل",
+      status: "صنايعي",
     });
     alert("Document written to Database");
   };
