@@ -5,12 +5,29 @@ import av2 from "../assets/image 2.png";
 import Animator from "../Components/Animator";
 import GoogleLoginBtn from "../Components/GoogleLoginBtn";
 
+import "../firebaseConfig"; // Add this line prevent firebase not loading error
+import { getFirestore, addDoc, collection } from "firebase/firestore";
+
 const Login1 = () => {
   const [Uname, setUname] = useState("");
 
+  const db = getFirestore();
+  
+  const saveDataToFirestore = async () => {
+    const docRef = await addDoc(collection(db, "users"), {
+      userName: localStorage.getItem("UserName"),
+      email: localStorage.getItem("Email"),
+      pic: localStorage.getItem("profPic"),
+      status: "عميل",
+    });
+    alert("Document written to Database");
+  };
+
   const saveD = () => {
     localStorage.setItem("h", 1);
+    saveDataToFirestore();
   };
+
 
   return (
     <>
@@ -26,7 +43,7 @@ const Login1 = () => {
           <p className="hint">{Uname}</p>
 
           <div className="GoogleL">
-            <GoogleLoginBtn/>
+            <GoogleLoginBtn />
 
             <br />
             <button onClick={saveD} className="Lbtn">
